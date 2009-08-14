@@ -1,4 +1,6 @@
 {
     "name": "narwhal-jaxer",
-    "engine": "jaxer"
+    "author": "Nathan L. Smith <nlloyds@gmail.com>",
+    "engine": "jaxer",
+    "dependencies": ["narwhal-xulrunner", "narwhal"]
 }
