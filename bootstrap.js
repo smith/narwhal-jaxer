@@ -13,9 +13,9 @@ if (typeof Jaxer !== "object" || !Jaxer.isOnServer) {
 
 (function (evalGlobal) {
     var env = Components.classes["@mozilla.org/process/environment;1"].
-            getService(Components.interfaces.nsIEnvironment);
+            getService(Components.interfaces.nsIEnvironment),
         // Check the environment, the jaxer config, then /opt/narwhal
-        prefix = env.get("NARWHAL_HOME") || Jaxer.Config.NARWHAL_HOME || 
+        prefix = env.get("NARWHAL_HOME") || Jaxer.Config.NARWHAL_HOME ||
             "/opt/narwhal",
         read = Jaxer.File.read,
         isFile = function (path) {
@@ -30,7 +30,7 @@ if (typeof Jaxer !== "object" || !Jaxer.isOnServer) {
         engine: 'jaxer',
         engines: ['jaxer', 'xulrunner', 'default'],
         print: function () { 
-            var moduleLogger = Jaxer.Log.forModule("narwhal")
+            var moduleLogger = Jaxer.Log.forModule("narwhal");
             moduleLogger.info.apply(moduleLogger, arguments);
         },
         evaluate: function (text, fileName) {
@@ -41,6 +41,7 @@ if (typeof Jaxer !== "object" || !Jaxer.isOnServer) {
                 fileName);
         },
         fs: { read: read, isFile: isFile },
-        prefix: prefix
+        prefix : prefix,
+        prefixes: [prefix]
     });
 }).call(this, function () { return eval(arguments[0]); });

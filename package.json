@@ -1,6 +1,7 @@
 {
     "name": "narwhal-jaxer",
     "author": "Nathan L. Smith <nlloyds@gmail.com>",
+    "keywords": ["jaxer", "engine", "mozilla", "spidermonkey", "embedded"],
     "engine": "jaxer",
     "dependencies": ["narwhal-xulrunner", "narwhal"]
 }
